@@ -5,6 +5,7 @@ metadata:
   title: Kaleidoscope
   author: Tella
   category: Full animations
+  image: og.jpg
 ---
 
 # Kaleidoscope

@@ -24,4 +24,4 @@ Most skills drive Tella through its MCP server and build on Tella's own skills, 
 
 ## Share a skill
 
-Sharing your own skills from Tella is coming soon; each one is reviewed before it shows up here. This repo is a read-only copy, so pull requests here aren't read.
+Share your own from Tella: open a skill you wrote in your skill library and choose **Share with the community**. Each one is reviewed before it shows up here. This repo is a read-only copy, so pull requests here aren't read.
