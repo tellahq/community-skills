@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "id": "opening",
+      "name": "Opening",
+      "description": "A serif line and a huge sans-serif headline settle over a drifting lilac-to-amber gradient, underlined by a hand-drawn curve.",
+      "poster": "gallery/opening.webp",
+      "preview": "gallery/opening.mp4"
+    },
+    {
+      "id": "builder",
+      "name": "Builder",
+      "description": "Three document cards drop onto a dotted path that a glowing dot travels along.",
+      "poster": "gallery/builder.webp",
+      "preview": "gallery/builder.mp4"
+    },
+    {
+      "id": "network",
+      "name": "Network",
+      "description": "Three dotted bubbles appear one by one and link up with thin curved lines.",
+      "poster": "gallery/network.webp",
+      "preview": "gallery/network.mp4"
+    },
+    {
+      "id": "private-activity",
+      "name": "Private activity",
+      "description": "A toggle flips on while a grid of small crosses fills in beside the headline.",
+      "poster": "gallery/private-activity.webp",
+      "preview": "gallery/private-activity.mp4"
+    },
+    {
+      "id": "side-projects",
+      "name": "Side projects",
+      "description": "Dotted bubbles join up along a winding line, each one labelled.",
+      "poster": "gallery/side-projects.webp",
+      "preview": "gallery/side-projects.mp4"
+    },
+    {
+      "id": "contributions",
+      "name": "Contributions",
+      "description": "A contribution grid lights up square by square under a two-line headline.",
+      "poster": "gallery/contributions.webp",
+      "preview": "gallery/contributions.mp4"
+    },
+    {
+      "id": "repository",
+      "name": "Repository",
+      "description": "A folder outline draws in and branches out into three files.",
+      "poster": "gallery/repository.webp",
+      "preview": "gallery/repository.mp4"
+    },
+    {
+      "id": "publish",
+      "name": "Publish",
+      "description": "A glowing dot travels a dotted path through two labelled stops to its destination.",
+      "poster": "gallery/publish.webp",
+      "preview": "gallery/publish.mp4"
+    },
+    {
+      "id": "profile-readme",
+      "name": "Profile README",
+      "description": "A profile card draws itself in outline: avatar, file list and lines of text.",
+      "poster": "gallery/profile-readme.webp",
+      "preview": "gallery/profile-readme.mp4"
+    },
+    {
+      "id": "networking-type",
+      "name": "Networking typography",
+      "description": "A giant word fills the frame, then an italic serif word settles over it on a dotted orbit.",
+      "poster": "gallery/networking-type.webp",
+      "preview": "gallery/networking-type.mp4"
+    },
+    {
+      "id": "readme-type",
+      "name": "README typography",
+      "description": "A big sans-serif word with an italic serif line beneath, on a blue gradient.",
+      "poster": "gallery/readme-type.webp",
+      "preview": "gallery/readme-type.mp4"
+    },
+    {
+      "id": "closing",
+      "name": "Closing",
+      "description": "A closing headline in sans and italic serif over a warm orange gradient, with a curve sweeping through.",
+      "poster": "gallery/closing.webp",
+      "preview": "gallery/closing.mp4"
+    }
+  ]
+}
