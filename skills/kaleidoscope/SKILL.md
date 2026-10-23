@@ -6,6 +6,7 @@ metadata:
   author: Tella
   category: Full animations
   image: og.jpg
+  poster: poster.jpg
 ---
 
 # Kaleidoscope
