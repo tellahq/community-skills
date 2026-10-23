@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "id": "stripes-iris",
+      "name": "Stripes iris",
+      "description": "Wavy mint and purple stripes open in an 8-petal flower-shaped iris, cover the frame, then close.",
+      "startSeconds": 600.4,
+      "poster": "gallery/stripes-iris.webp",
+      "preview": "gallery/stripes-iris.mp4"
+    },
+    {
+      "id": "bloom-wave",
+      "name": "Bloom wave",
+      "description": "A blue flower bloom sweeps in from the left behind a wavy edge and wipes out the same way.",
+      "startSeconds": 767.9,
+      "poster": "gallery/bloom-wave.webp",
+      "preview": "gallery/bloom-wave.mp4"
+    },
+    {
+      "id": "grid-tiles",
+      "name": "Grid tiles",
+      "description": "A 3×3 flower grid builds tile by tile along a diagonal, then the tiles shrink away.",
+      "startSeconds": 781.0,
+      "poster": "gallery/grid-tiles.webp",
+      "preview": "gallery/grid-tiles.mp4"
+    },
+    {
+      "id": "pink-stripes-blinds",
+      "name": "Pink stripes blinds",
+      "description": "The stripes hue-shifted to pink and orange, closing and opening as staggered horizontal blinds (1.6s version).",
+      "startSeconds": 853.4,
+      "poster": "gallery/pink-stripes-blinds.webp",
+      "preview": "gallery/pink-stripes-blinds.mp4"
+    },
+    {
+      "id": "warm-bloom-iris",
+      "name": "Warm bloom iris",
+      "description": "An orange and pink bloom inside a 6-petal iris.",
+      "startSeconds": 857.6,
+      "poster": "gallery/warm-bloom-iris.webp",
+      "preview": "gallery/warm-bloom-iris.mp4"
+    },
+    {
+      "id": "stripes-bloom-diagonal",
+      "name": "Stripes and bloom diagonal",
+      "description": "The bloom keyed over the stripes, wiping across on a diagonal.",
+      "startSeconds": 871.4,
+      "poster": "gallery/stripes-bloom-diagonal.webp",
+      "preview": "gallery/stripes-bloom-diagonal.mp4"
+    },
+    {
+      "id": "rings-wave",
+      "name": "Rings wave",
+      "description": "Wavy concentric rings in the stripes palette, wiping right to left with a wavy edge.",
+      "startSeconds": 101.6,
+      "poster": "gallery/rings-wave.webp",
+      "preview": "gallery/rings-wave.mp4"
+    },
+    {
+      "id": "violet-grid-tiles",
+      "name": "Violet grid tiles",
+      "description": "A violet flower grid whose tiles pop in and out in random order.",
+      "startSeconds": 1017.6,
+      "poster": "gallery/violet-grid-tiles.webp",
+      "preview": "gallery/violet-grid-tiles.mp4"
+    }
+  ]
+}
