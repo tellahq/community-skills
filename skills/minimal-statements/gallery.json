@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": "builder-image-inset",
+      "name": "Image inset: { build[image]er }",
+      "description": "\"builder\" splits open and the slot shows one photo per thing she lists (videos, writing, websites, hardware, code), then closes.",
+      "startSeconds": 169.3,
+      "poster": "gallery/builder-image-inset.webp",
+      "preview": "gallery/builder-image-inset.mp4"
+    },
+    {
+      "id": "rebuttal-02",
+      "name": "Statement: rebuttal 02",
+      "description": "{ networking is more impactful } builds word by word under a REBUTTAL 02 label.",
+      "startSeconds": 312.3,
+      "poster": "gallery/rebuttal-02.webp",
+      "preview": "gallery/rebuttal-02.mp4"
+    },
+    {
+      "id": "rebuttal-03",
+      "name": "Statement: rebuttal 03",
+      "description": "{ engineers will think it's lame }, five words landing on the spoken ones.",
+      "startSeconds": 391.6,
+      "poster": "gallery/rebuttal-03.webp",
+      "preview": "gallery/rebuttal-03.mp4"
+    },
+    {
+      "id": "rebuttal-04",
+      "name": "Statement: rebuttal 04",
+      "description": "{ my work is private }, shortened from \"all of my work is in private repos\".",
+      "startSeconds": 470.4,
+      "poster": "gallery/rebuttal-04.webp",
+      "preview": "gallery/rebuttal-04.mp4"
+    },
+    {
+      "id": "rebuttal-05",
+      "name": "Statement: rebuttal 05",
+      "description": "{ this feels intimidating }, a short three-word card.",
+      "startSeconds": 556.6,
+      "poster": "gallery/rebuttal-05.webp",
+      "preview": "gallery/rebuttal-05.mp4"
+    }
+  ]
+}
