@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "id": "agentic-editing",
+      "name": "Agentic editing",
+      "description": "An AI cube feeds a row of steps: cut silences, transitions, zooms and b-roll.",
+      "startSeconds": 7.4,
+      "poster": "gallery/agentic-editing.webp",
+      "preview": "gallery/agentic-editing.mp4"
+    },
+    {
+      "id": "rough-cut",
+      "name": "Rough cut",
+      "description": "Silences, repetitions, mistakes and filler words light up on a raw recording, then the cut version drops in below.",
+      "startSeconds": 93.6,
+      "poster": "gallery/rough-cut.webp",
+      "preview": "gallery/rough-cut.mp4"
+    },
+    {
+      "id": "asset-pipeline",
+      "name": "Asset pipeline",
+      "description": "Screenshots, stats and anything else wire into a Slack bot, then an assets folder, then the AI.",
+      "startSeconds": 331.1,
+      "poster": "gallery/asset-pipeline.webp",
+      "preview": "gallery/asset-pipeline.mp4"
+    },
+    {
+      "id": "pdf-to-timeline",
+      "name": "PDF to timeline",
+      "description": "A PDF goes through extract and cut, and its photos land on a timeline at exact timestamps.",
+      "startSeconds": 359.4,
+      "poster": "gallery/pdf-to-timeline.webp",
+      "preview": "gallery/pdf-to-timeline.mp4"
+    },
+    {
+      "id": "saving-a-sound",
+      "name": "Saving a sound effect",
+      "description": "A YouTube link drops through a Slack bot into a sounds folder, labelled with its type and name.",
+      "startSeconds": 519.1,
+      "poster": "gallery/saving-a-sound.webp",
+      "preview": "gallery/saving-a-sound.mp4"
+    },
+    {
+      "id": "prep-work",
+      "name": "Prep work",
+      "description": "Screenshots and memes gather into one folder, which the AI then places on the timeline.",
+      "startSeconds": 678.6,
+      "poster": "gallery/prep-work.webp",
+      "preview": "gallery/prep-work.mp4"
+    },
+    {
+      "id": "meme-placement",
+      "name": "Meme placement",
+      "description": "A bar chart shows where the meme was asked for, where it was placed, and the peak it was timed to.",
+      "startSeconds": 702.3,
+      "poster": "gallery/meme-placement.webp",
+      "preview": "gallery/meme-placement.mp4"
+    },
+    {
+      "id": "ken-burns",
+      "name": "Ken Burns",
+      "description": "A crop slowly tightens on a picture next to the scale-over-time curve that drives it.",
+      "startSeconds": 738.0,
+      "poster": "gallery/ken-burns.webp",
+      "preview": "gallery/ken-burns.mp4"
+    },
+    {
+      "id": "long-to-short-form",
+      "name": "Long form to short form",
+      "description": "A moment of a landscape video becomes a vertical clip with captions.",
+      "startSeconds": 867.7,
+      "poster": "gallery/long-to-short-form.webp",
+      "preview": "gallery/long-to-short-form.mp4"
+    },
+    {
+      "id": "tella-mcp",
+      "name": "Tella MCP",
+      "description": "The AI talks to the Tella editor through the MCP, and a change appears in the editor.",
+      "startSeconds": 989.8,
+      "poster": "gallery/tella-mcp.webp",
+      "preview": "gallery/tella-mcp.mp4"
+    },
+    {
+      "id": "b-roll-pipeline",
+      "name": "B-roll pipeline",
+      "description": "An uncut transcript becomes b-roll moments, a motion graphic, an MP4 and a b-roll layout in Tella.",
+      "startSeconds": 1138.8,
+      "poster": "gallery/b-roll-pipeline.webp",
+      "preview": "gallery/b-roll-pipeline.mp4"
+    },
+    {
+      "id": "one-ai-model",
+      "name": "One AI model",
+      "description": "The AI in the middle, wired to the Tella MCP, ElevenLabs, CapCut and more tools.",
+      "startSeconds": 1266.2,
+      "poster": "gallery/one-ai-model.webp",
+      "preview": "gallery/one-ai-model.mp4"
+    }
+  ]
+}
