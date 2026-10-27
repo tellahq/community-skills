@@ -16,7 +16,10 @@ metadata:
   category: Diagrams
   tags: exploded view, teardown, isometric, line art, product, hardware, technical drawing, labels, how it's made, what's inside
   image: og.jpg
-  poster: references/example_exploded.jpg
+  poster: gallery/teardown.webp
+  preview: gallery/teardown.mp4
+  video: untitled-video-hj0vh8im
+  video-aspect: landscape
   prompt: Make an exploded-view teardown of the product in this video, with a label for each part.
 ---
 # Exploded view / teardown animation (Tella Motion)
