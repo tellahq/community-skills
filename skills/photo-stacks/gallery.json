@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "fan",
+      "name": "Fan: fashion & wardrobe",
+      "description": "Five Pinterest outfit photos slide out of one pile into a 3D fan beside the presenter, with a \"fashion & wardrobe\" pill. Medium speed.",
+      "startSeconds": 533.6,
+      "poster": "gallery/fan.webp",
+      "preview": "gallery/fan.mp4"
+    },
+    {
+      "id": "cascade",
+      "name": "Cascade: you [photos] build",
+      "description": "Reading, family life, sports and relationships land one card per spoken word, small to large, then \"you\" and \"build\" frame the stack.",
+      "startSeconds": 541.9,
+      "poster": "gallery/cascade.webp",
+      "preview": "gallery/cascade.mp4"
+    }
+  ]
+}
