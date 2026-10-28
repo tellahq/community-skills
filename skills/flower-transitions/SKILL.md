@@ -12,7 +12,6 @@ metadata:
   title: Flower transitions
   author: Louise de Sadeleer
   category: Transition screens
-  tags: transition, flower, kaleidoscope, stripes, bloom, grain, retro, overlay, layout change, wipe
   image: og.jpg
   poster: gallery/bloom-wave.webp
   preview: gallery/bloom-wave.mp4

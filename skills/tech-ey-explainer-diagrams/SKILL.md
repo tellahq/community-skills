@@ -5,7 +5,6 @@ metadata:
   title: Tech-ey explainer diagrams
   author: Tella
   category: Diagrams
-  tags: explainer, flowchart, pipeline, timeline, chart, isometric, diagram
   image: og.jpg
   poster: gallery/agentic-editing.webp
   preview: gallery/agentic-editing.mp4

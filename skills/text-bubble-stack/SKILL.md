@@ -14,7 +14,6 @@ metadata:
   title: Text bubble stack
   author: Grant Shaddick
   category: Full animations
-  tags: text message, chat bubbles, imessage, sms, speech bubble, skeuomorphic, talking head, behind speaker, kinetic, overlay
   image: og.jpg
   poster: gallery/no-nope-nooooope.webp
   preview: gallery/no-nope-nooooope.mp4

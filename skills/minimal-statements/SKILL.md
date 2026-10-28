@@ -17,7 +17,6 @@ metadata:
   title: Minimal statements
   author: Louise de Sadeleer
   category: Transition screens
-  tags: minimal, statement, brackets, braces, kinetic type, word by word, title card, rebuttal, section intro, image inset, b-roll
   image: og.jpg
   poster: gallery/rebuttal-02.webp
   preview: gallery/rebuttal-02.mp4

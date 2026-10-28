@@ -13,7 +13,6 @@ metadata:
   title: Logo mask reveal
   author: Grant Shaddick
   category: Transition screens
-  tags: logo, logo reveal, logo intro, mask, matte, zoom through, svg, brand, intro, transition, motion blur
   image: og.jpg
   poster: gallery/logo-intro.webp
   preview: gallery/logo-intro.mp4

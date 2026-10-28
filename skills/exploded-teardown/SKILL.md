@@ -14,7 +14,6 @@ metadata:
   title: Exploded teardown
   author: Grant Shaddick
   category: Diagrams
-  tags: exploded view, teardown, isometric, line art, product, hardware, technical drawing, labels, how it's made, what's inside
   image: og.jpg
   poster: gallery/teardown.webp
   preview: gallery/teardown.mp4

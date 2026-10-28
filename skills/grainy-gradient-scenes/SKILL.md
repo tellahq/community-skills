@@ -5,7 +5,6 @@ metadata:
   title: Grainy gradient scenes
   author: Tella
   category: Full animations
-  tags: gradient, grain, typography, title card, diagram
   image: og.jpg
   poster: gallery/opening.webp
   preview: gallery/opening.mp4
