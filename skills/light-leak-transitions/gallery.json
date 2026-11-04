@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": "amber-golden-hour",
+      "name": "Amber golden hour",
+      "description": "A warm amber leak washes over the cut from a woman in a field to a clifftop.",
+      "poster": "gallery/amber-golden-hour.webp",
+      "preview": "gallery/amber-golden-hour.mp4"
+    },
+    {
+      "id": "rose-film-burn",
+      "name": "Rose film burn",
+      "description": "A rose film burn hides the cuts between archive street, harbour and group footage.",
+      "poster": "gallery/rose-film-burn.webp",
+      "preview": "gallery/rose-film-burn.mp4"
+    },
+    {
+      "id": "teal-blue-hour",
+      "name": "Teal blue hour",
+      "description": "A cool teal leak at the cut from a blue-hour lake to a desk.",
+      "poster": "gallery/teal-blue-hour.webp",
+      "preview": "gallery/teal-blue-hour.mp4"
+    },
+    {
+      "id": "amber-burn-and-clip-to-clip",
+      "name": "Amber burn, clip to clip",
+      "description": "A strong amber burn across several cuts: field, clifftop, lake and desk.",
+      "poster": "gallery/amber-burn-and-clip-to-clip.webp",
+      "preview": "gallery/amber-burn-and-clip-to-clip.mp4"
+    }
+  ]
+}
