@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "paper-and-ink",
+      "name": "Paper and ink",
+      "description": "Cream and black halves slam in, a red VS badge punches in, and rows tick in with crosses and checks before the right side wins.",
+      "poster": "gallery/paper-and-ink.webp",
+      "preview": "gallery/paper-and-ink.mp4"
+    },
+    {
+      "id": "over-footage",
+      "name": "Over footage",
+      "description": "Archive office footage cuts to a dark vs purple card comparing status meetings with async updates, then back to the footage.",
+      "poster": "gallery/over-footage.webp",
+      "preview": "gallery/over-footage.mp4"
+    },
+    {
+      "id": "bone-and-forest",
+      "name": "Bone and forest",
+      "description": "The new palette direction: bone vs deep forest green with one ochre VS stamp. Rows tick in, the old side dims and a WINNER tag lands under the new way.",
+      "poster": "gallery/bone-and-forest.webp",
+      "preview": "gallery/bone-and-forest.mp4"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "cobalt-spread",
+      "name": "Cobalt spread (dark)",
+      "description": "The pull-quote spread in the cobalt palette, dark: huge initials on a pale panel beside a serif quote on navy, with its last words marked in cobalt.",
+      "poster": "gallery/cobalt-spread.webp",
+      "preview": "gallery/cobalt-spread.mp4"
+    },
+    {
+      "id": "sunflower-trio",
+      "name": "Sunflower trio (light)",
+      "description": "Three review cards on cream in the sunflower palette; the middle card is featured in yellow and \"pure sunshine\" gets the marker.",
+      "poster": "gallery/sunflower-trio.webp",
+      "preview": "gallery/sunflower-trio.mp4"
+    },
+    {
+      "id": "side-panel-over-footage",
+      "name": "Side panel over footage",
+      "description": "A full-height paper panel slides in beside the speaker with stars, a quote with the key phrase highlighted, and the attribution. It slides out before the cut.",
+      "poster": "gallery/side-panel-over-footage.webp",
+      "preview": "gallery/side-panel-over-footage.mp4"
+    }
+  ]
+}
