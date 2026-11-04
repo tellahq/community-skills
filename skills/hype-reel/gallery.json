@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "machine-age",
+      "name": "Machine age",
+      "description": "Archival B&W cut of steam trains, presses and steel pours on a 120 BPM drop. It has a horizontal motion-blurred whip, two speed ramps, two flash frames and a \"BUILT TO MOVE\" title.",
+      "poster": "gallery/machine-age.webp",
+      "preview": "gallery/machine-age.mp4"
+    },
+    {
+      "id": "liftoff",
+      "name": "Liftoff",
+      "description": "Rockets and orbit footage in a warm navy-to-cream tint on 110 BPM background music. A night-pad cold open rides the riser, then an upward whip and a \"LAUNCH DAY\" title.",
+      "poster": "gallery/liftoff.webp",
+      "preview": "gallery/liftoff.mp4"
+    },
+    {
+      "id": "make-waves",
+      "name": "Make waves (9:16)",
+      "description": "Vertical social reel of vintage speedboats in a teal duotone. It starts one beat before the 105 BPM track re-enters after its break, reframes each shot for portrait, and ends on a stacked \"MAKE WAVES\" title.",
+      "poster": "gallery/make-waves.webp",
+      "preview": "gallery/make-waves.mp4"
+    }
+  ]
+}
