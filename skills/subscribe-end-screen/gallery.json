@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": "brand-slab-nudge",
+      "name": "Brand slab nudge",
+      "description": "Over the footage, an ink 'QN' monogram tile drops into the bottom-left corner. A lime slab wipes out of it with 'QUILLFERN NOTES / Subscribe for more \u2192'. The arrow keeps nudging until the slab folds back into the tile.",
+      "poster": "gallery/brand-slab-nudge.webp",
+      "preview": "gallery/brand-slab-nudge.mp4"
+    },
+    {
+      "id": "paper-tab-nudge",
+      "name": "Paper tab nudge",
+      "description": "A cobalt 'IP' tile sits bottom-right and a paper tab slides out of it saying 'Subscribe'. The line rolls up to 'A new build every Friday' while the tab widens to fit, and a cobalt timer bar runs along its foot.",
+      "poster": "gallery/paper-tab-nudge.webp",
+      "preview": "gallery/paper-tab-nudge.mp4"
+    },
+    {
+      "id": "brand-panel-end-screen",
+      "name": "Brand panel end screen",
+      "description": "A 12 s end-screen clip. A lime panel rises with 'Keep watching' and a 'QN' subscribe circle with a turning dotted ring. Two hatched 16:9 slots with lime crop marks stack on ink.",
+      "poster": "gallery/brand-panel-end-screen.webp",
+      "preview": "gallery/brand-panel-end-screen.mp4"
+    },
+    {
+      "id": "paper-sheet-end-screen",
+      "name": "Paper sheet end screen",
+      "description": "A paper sheet with a cobalt leading band rises over the last shot. It shows 'Thanks for watching', two 16:9 slots side by side, and the 'Subscribe \u2192' label with the 'IP' circle bottom-right.",
+      "poster": "gallery/paper-sheet-end-screen.webp",
+      "preview": "gallery/paper-sheet-end-screen.mp4"
+    }
+  ]
+}
