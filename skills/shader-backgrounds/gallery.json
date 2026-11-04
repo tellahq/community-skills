@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": "survey-chapter-card",
+      "name": "Survey chapter card",
+      "description": "Drifting topographic contour lines behind a chapter card, with a folio row, a big numeral, a two-line title, a pinging map marker and a chapter rail.",
+      "poster": "gallery/survey-chapter-card.webp",
+      "preview": "gallery/survey-chapter-card.mp4"
+    },
+    {
+      "id": "overprint-stat-slide",
+      "name": "Overprint stat slide",
+      "description": "A \"12\u00d7\" counts up beside two dithered, misregistered ink discs on paper, with a claim, before/after bars and a source line.",
+      "poster": "gallery/overprint-stat-slide.webp",
+      "preview": "gallery/overprint-stat-slide.mp4"
+    },
+    {
+      "id": "rag-archive-quote",
+      "name": "Rag archive quote",
+      "description": "A customer quote on moving cotton-rag paper, with archive film mounted like a print, a serif pull quote and the attribution.",
+      "poster": "gallery/rag-archive-quote.webp",
+      "preview": "gallery/rag-archive-quote.mp4"
+    },
+    {
+      "id": "survey-lower-third",
+      "name": "Survey lower third",
+      "description": "A speaker's name tag over interview footage: a small contour-shader panel with the name, role and a pinging marker.",
+      "poster": "gallery/survey-lower-third.webp",
+      "preview": "gallery/survey-lower-third.mp4"
+    }
+  ]
+}

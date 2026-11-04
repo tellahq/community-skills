@@ -1,0 +1,76 @@
+// Overprint: two discs of brand ink screened into ordered dots and printed
+// over each other on a paper sheet, the second ink a few px out of register.
+// The ink ramps turn and the small disc circles the big one.
+// Written for the shader-backgrounds skill. Seamless every loopSeconds.
+uniform shader image;
+uniform float4 frame;        // the shape's box in canvas px: x, y, width, height (0, 0, 1920, 1080 full frame)
+uniform float time;
+uniform float loopSeconds;
+uniform half4 paper;        // the sheet
+uniform half4 inkA;         // big disc: the brand colour
+uniform half4 inkB;         // small disc, printed over the first
+uniform float cell;         // dot cell in px: 3-6 (whole numbers)
+uniform float3 discA;       // centre x, y (0-1 of the shape) and radius (fraction of its height)
+uniform float3 discB;       // the same for the second ink
+uniform float orbit;        // how far disc B circles, fraction of the height (0.04-0.07)
+uniform float misregister;  // px the second ink is shifted
+uniform float reveal;       // 0-1 wipe from the left edge; 1 = fully printed
+
+// 8x8 ordered screen threshold: three nested 2x2 steps, finest step heaviest.
+float screen8(float2 c) {
+  float t = 0.0;
+  float w = 0.25;
+  for (int i = 0; i < 3; i++) {
+    float2 b = mod(floor(c), 2.0);
+    t += mod(2.0 * b.x + 3.0 * b.y, 4.0) * w;
+    w *= 0.25;
+    c *= 0.5;
+  }
+  return t + 1.0 / 128.0;
+}
+
+// paper tooth: a cheap scrambled value per px, re-rolled 12 times a second
+float tooth(float2 p, float frame) {
+  float2 s = fract((floor(p) + frame * float2(41.0, 23.0)) * float2(0.0937, 0.1571));
+  s += dot(s, s.yx + 21.7);
+  return fract(s.x * s.y * 3.17 + s.y);
+}
+
+// ink density in a disc: a ramp across it at angle ang, 0 outside
+float density(float2 q, float2 c, float r, float ang, float lo, float hi) {
+  float2 d = q - c;
+  float inside = 1.0 - smoothstep(r - 0.0015, r + 0.0015, length(d));
+  float along = dot(d / r, float2(cos(ang), sin(ang))) * 0.5 + 0.5;
+  return inside * mix(lo, hi, clamp(along, 0.0, 1.0));
+}
+
+half4 main(float2 canvasP) {
+  float2 res = frame.zw;
+  float2 p = canvasP - frame.xy;  // shape-local px: the renderer passes canvas px
+  half alpha = image.eval(canvasP).a;
+  float ph = 6.2831853 * time / loopSeconds;
+  float2 asp = float2(res.x / res.y, 1.0);
+
+  float2 ca = floor(p / cell);
+  float2 qa = (ca * cell + 0.5 * cell) / res.y;
+  float2 sway = 0.012 * float2(sin(ph), cos(ph));
+  float a = density(qa, discA.xy * asp + sway, discA.z, 1.2 + 0.6 * sin(ph), 0.08, 1.0);
+
+  float2 shift = float2(misregister, -0.5 * misregister) * (1.0 + 0.25 * sin(ph));
+  float2 cb = floor((p + shift) / cell);
+  float2 qb = (cb * cell + 0.5 * cell) / res.y;
+  float2 circle = orbit * float2(cos(ph), sin(ph));
+  float b = density(qb, discB.xy * asp + circle, discB.z, -1.9 + 0.6 * cos(ph), 0.12, 0.95);
+
+  float dotA = step(screen8(ca), a);
+  float dotB = step(screen8(cb + 3.0), b);
+
+  float3 col = float3(paper.rgb);
+  col *= mix(float3(1.0), float3(inkA.rgb), dotA * 0.95);
+  col *= mix(float3(1.0), float3(inkB.rgb), dotB * 0.92);
+  col += 0.03 * (tooth(p, floor(time * 12.0)) - 0.5);
+
+  float shown = 1.0 - smoothstep(reveal * (res.x + 2.0) - 2.0, reveal * (res.x + 2.0), p.x);
+  half o = alpha * half(shown);
+  return half4(half3(col) * o, o);
+}

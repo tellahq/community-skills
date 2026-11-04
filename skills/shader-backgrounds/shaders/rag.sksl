@@ -1,0 +1,84 @@
+// Rag: a sheet of cotton rag paper. Soft mottling, embossed undulations lit
+// by a light that circles slowly, fibres in two directions, rare specks, two
+// brand-tinted washes drifting at opposite corners, a light vignette and grain.
+// Written for the shader-backgrounds skill. Seamless every loopSeconds.
+uniform shader image;
+uniform float4 frame;        // the shape's box in canvas px: x, y, width, height (0, 0, 1920, 1080 full frame)
+uniform float time;
+uniform float loopSeconds;
+uniform half4 paper;        // the sheet; keep it light
+uniform half4 wash;         // a pale brand tint multiplied in at two corners
+uniform float washAmount;   // 0-1 strength of the washes
+uniform float grain;        // 0.02-0.04
+uniform float reveal;       // 0-1 wipe from the left edge; 1 = the whole sheet
+
+float scramble(float2 c) {
+  float2 s = fract(c * float2(0.0937, 0.1571) + 0.31);
+  s += dot(s, s.yx + 21.7);
+  return fract(s.x * s.y * 3.17 + s.y);
+}
+
+float smoothNoise(float2 p) {
+  float2 i = floor(p);
+  float2 f = fract(p);
+  float2 u = f * f * (3.0 - 2.0 * f);
+  return mix(mix(scramble(i), scramble(i + float2(1.0, 0.0)), u.x),
+             mix(scramble(i + float2(0.0, 1.0)), scramble(i + float2(1.0, 1.0)), u.x), u.y);
+}
+
+// four octaves, each turned about 34 degrees and scaled 2.1x
+float layered(float2 p) {
+  float v = 0.0;
+  float amp = 0.5;
+  for (int i = 0; i < 4; i++) {
+    v += amp * smoothNoise(p);
+    p = float2(1.733 * p.x - 1.186 * p.y, 1.186 * p.x + 1.733 * p.y) + float2(3.1, 5.9);
+    amp *= 0.5;
+  }
+  return v;
+}
+
+float pool(float2 q, float2 c, float r) {
+  float2 d = (q - c) / r;
+  return exp(-dot(d, d));
+}
+
+half4 main(float2 canvasP) {
+  float2 res = frame.zw;
+  float2 p = canvasP - frame.xy;  // shape-local px: the renderer passes canvas px
+  half alpha = image.eval(canvasP).a;
+  float ph = 6.2831853 * time / loopSeconds;
+  float aspect = res.x / res.y;
+  float2 q = p / res.y;
+
+  // embossed undulations: slope of a low-frequency field, lit from a circling light
+  float e = 2.0 / res.y;
+  float c0 = layered(q * 3.2);
+  float cx = layered((q + float2(e, 0.0)) * 3.2);
+  float cy = layered((q + float2(0.0, e)) * 3.2);
+  float2 slope = float2(cx - c0, cy - c0) / e;
+  float2 light = normalize(float2(-0.6 + 0.3 * cos(ph), -0.8 + 0.3 * sin(ph)));
+  float emboss = clamp(dot(slope, light) * 0.006, -0.04, 0.04);
+
+  float fibreA = smoothNoise(float2(q.x * 880.0, q.y * 110.0 + q.x * 28.0));
+  float fibreB = smoothNoise(float2(q.x * 150.0 + q.y * 55.0, q.y * 760.0));
+  float speck = step(0.9986, scramble(floor(p / 2.0) + 11.0));
+
+  float3 col = float3(paper.rgb);
+  col *= 0.955 + 0.07 * layered(q * 1.8 + 4.0);
+  col += emboss;
+  col -= 0.055 * (fibreA - 0.5) + 0.04 * (fibreB - 0.5);
+  col -= 0.09 * speck;
+
+  float w = 0.7 * pool(q, float2(0.88 * aspect + 0.07 * cos(ph), 0.12 + 0.05 * sin(ph)), 0.55)
+          + 0.5 * pool(q, float2(0.06 * aspect + 0.05 * sin(ph), 0.96 + 0.04 * cos(ph)), 0.45);
+  col *= mix(float3(1.0), float3(wash.rgb), clamp(w * washAmount, 0.0, 1.0));
+
+  float2 v = p / res - 0.5;
+  col *= 1.0 - 0.22 * dot(v, v);
+  col += float3((scramble(p + floor(time * 24.0) * float2(7.0, 13.0)) - 0.5) * grain);
+
+  float shown = 1.0 - smoothstep(reveal * (res.x + 2.0) - 2.0, reveal * (res.x + 2.0), p.x);
+  half o = alpha * half(shown);
+  return half4(half3(col) * o, o);
+}

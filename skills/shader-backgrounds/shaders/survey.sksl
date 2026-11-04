@@ -1,0 +1,70 @@
+// Survey: a topographic map that drifts and returns. Iso-lines of a warped
+// sine relief, every fifth line heavier in the accent, survey crosses on a
+// grid, and a quiet zone where the lines fade out behind type.
+// Written for the shader-backgrounds skill. Seamless every loopSeconds.
+uniform shader image;
+uniform float4 frame;        // the shape's box in canvas px: x, y, width, height (0, 0, 1920, 1080 full frame)
+uniform float time;
+uniform float loopSeconds;
+uniform half4 ground;       // the map's ground colour
+uniform half4 lineColor;    // minor contour lines and grid crosses
+uniform half4 accent;       // every fifth (index) contour
+uniform float lines;        // contours per unit of height: 12 sparse .. 26 dense
+uniform float zoom;         // map scale: 3 for a full frame, 4-5 on a small panel
+uniform float crosses;      // 0-1 opacity of the survey crosses, 0 = off
+uniform float crossPx;      // spacing of the crosses in px
+uniform float4 calm;        // quiet zone: centre x, y (0-1 of the shape), radii x, y (fractions of its height)
+uniform float calmStrength; // 0-1: how far the lines fade inside the quiet zone
+uniform float reveal;       // 0-1 wipe from the left edge; 1 = fully drawn
+
+float relief(float2 q, float ph) {
+  // the whole map slides round a small circle, so it is back where it began each loop
+  q += 0.15 * float2(sin(ph), cos(ph));
+  float2 w = q;
+  for (int i = 0; i < 4; i++) {
+    float k = float(i) + 1.0;
+    w += float2(sin(w.y * (0.80 + 0.21 * k) + 1.7 * k),
+                cos(w.x * (0.70 + 0.17 * k) - 2.1 * k)) * (0.6 / k);
+  }
+  return 0.5 + 0.22 * sin(w.x * 1.15) * cos(w.y * 0.9 + 0.4)
+             + 0.20 * sin(w.x * 0.55 + w.y * 1.25 + 0.8)
+             + 0.03 * cos(ph);
+}
+
+half4 main(float2 canvasP) {
+  float2 res = frame.zw;
+  float2 p = canvasP - frame.xy;  // shape-local px: the renderer passes canvas px
+  half alpha = image.eval(canvasP).a;
+  float ph = 6.2831853 * time / loopSeconds;
+  float s = zoom / res.y;
+  float2 q = p * s;
+  float h = relief(q, ph);
+  float hx = relief(q + float2(s, 0.0), ph);
+  float hy = relief(q + float2(0.0, s), ph);
+  float slope = length(float2(hx - h, hy - h)) + 1e-5;
+
+  // distance to the nearest contour in px: anti-aliased at any slope
+  float v = h * lines;
+  float px = abs(fract(v + 0.5) - 0.5) / (slope * lines);
+  float major = step(mod(floor(v + 0.5), 5.0), 0.5);
+  float width = mix(0.85, 1.6, major);
+  float ink = (1.0 - smoothstep(width - 0.6, width + 0.6, px)) * mix(0.45, 0.95, major);
+
+  float2 d = (p / res - calm.xy) * float2(res.x / res.y, 1.0) / calm.zw;
+  float quiet = calmStrength * (1.0 - smoothstep(0.55, 1.25, length(d)));
+  ink *= 1.0 - quiet;
+
+  // survey crosses: a small plus at every grid point
+  float2 g = abs(fract(p / crossPx + 0.5) - 0.5) * crossPx;
+  float arm = step(max(g.x, g.y), 7.0);
+  float bar = 1.0 - smoothstep(0.4, 1.1, min(g.x, g.y));
+  float mark = arm * bar * crosses * (1.0 - quiet);
+
+  float3 col = float3(ground.rgb) * (0.88 + 0.24 * h);
+  col = mix(col, float3(lineColor.rgb), mark * 0.8);
+  col = mix(col, major > 0.5 ? float3(accent.rgb) : float3(lineColor.rgb), ink);
+
+  float shown = 1.0 - smoothstep(reveal * (res.x + 2.0) - 2.0, reveal * (res.x + 2.0), p.x);
+  half a = alpha * half(shown);
+  return half4(half3(col) * a, a);
+}
