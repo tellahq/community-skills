@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "now-playing-9-16",
+      "name": "Now playing (9:16)",
+      "description": "A podcast now-playing screen: a gradient taken from the cover, big cover art, scrubber with times, play controls and a transcript card that lights up word by word.",
+      "poster": "gallery/now-playing-9-16.webp",
+      "preview": "gallery/now-playing-9-16.mp4"
+    },
+    {
+      "id": "post-9-16",
+      "name": "Post (9:16)",
+      "description": "A newsletter post page with a podcast player. The transcript is the post's text and turns to ink as it is spoken.",
+      "poster": "gallery/post-9-16.webp",
+      "preview": "gallery/post-9-16.mp4"
+    },
+    {
+      "id": "cream-square-1-1",
+      "name": "Cream square (1:1)",
+      "description": "Cover art, show and episode title, a waveform that fills with progress and word-by-word captions.",
+      "poster": "gallery/cream-square-1-1.webp",
+      "preview": "gallery/cream-square-1-1.mp4"
+    }
+  ]
+}
