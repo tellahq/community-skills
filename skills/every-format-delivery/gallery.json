@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": "master-16-9",
+      "name": "16:9 master",
+      "description": "A 1953 salesman at a counter. Two headlines are set as snug paper tabs under an orange kicker, flush right on the empty shelves, with a corner series mark and captions.",
+      "poster": "gallery/master-16-9.webp",
+      "preview": "gallery/master-16-9.mp4"
+    },
+    {
+      "id": "vertical-9-16",
+      "name": "9:16 vertical",
+      "description": "The same cut re-composed for 9:16. Crop sections pan with him and fill the frame. The tabs move to the left margin at 96 px, the mark runs down the right edge and the captions sit above the phone UI.",
+      "poster": "gallery/vertical-9-16.webp",
+      "preview": "gallery/vertical-9-16.mp4"
+    },
+    {
+      "id": "square-1-1",
+      "name": "1:1 square",
+      "description": "The same cut re-framed to a full-bleed square. The tabs are re-set flush right below his chin at 80 px, with the mark top right and the captions low.",
+      "poster": "gallery/square-1-1.webp",
+      "preview": "gallery/square-1-1.mp4"
+    },
+    {
+      "id": "all-three-side-by-side",
+      "name": "All three side by side",
+      "description": "A sign-off board where 16:9, 9:16 and 1:1 play in sync at equal height, each labelled with its format and size, above one moving playhead.",
+      "poster": "gallery/all-three-side-by-side.webp",
+      "preview": "gallery/all-three-side-by-side.mp4"
+    }
+  ]
+}
