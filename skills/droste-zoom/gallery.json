@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "id": "app-to-chapter",
+      "name": "App to chapter card",
+      "description": "A made-up notes app's video player zooms in until its thumbnail becomes the full-frame chapter card.",
+      "poster": "gallery/app-to-chapter.webp",
+      "preview": "gallery/app-to-chapter.mp4"
+    },
+    {
+      "id": "through-the-photo",
+      "name": "Through the photo",
+      "description": "Archive street footage; a postcard appears and the camera zooms through it into the next shot.",
+      "poster": "gallery/through-the-photo.webp",
+      "preview": "gallery/through-the-photo.mp4"
+    }
+  ]
+}
