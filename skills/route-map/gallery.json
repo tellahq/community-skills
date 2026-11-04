@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "expansion-spokes",
+      "name": "Expansion spokes",
+      "description": "A light world map: arcs spread from Toronto to Mexico City, S\u00e3o Paulo and Madrid, each city pinned with a label.",
+      "poster": "gallery/expansion-spokes.webp",
+      "preview": "gallery/expansion-spokes.mp4"
+    },
+    {
+      "id": "night-flight",
+      "name": "Night flight",
+      "description": "A dark map with a plane flying Austin to London to Singapore along an amber arc, the camera following.",
+      "poster": "gallery/night-flight.webp",
+      "preview": "gallery/night-flight.mp4"
+    },
+    {
+      "id": "paper-atlas",
+      "name": "Paper atlas",
+      "description": "A paper-toned map of Europe with a dashed red route Lisbon, Madrid, Lyon, Amsterdam.",
+      "poster": "gallery/paper-atlas.webp",
+      "preview": "gallery/paper-atlas.mp4"
+    }
+  ]
+}
