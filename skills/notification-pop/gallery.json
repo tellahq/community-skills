@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "ios-lock-screen",
+      "name": "iOS lock screen, portrait",
+      "description": "Light iPhone lock-screen banners in the empty dusk sky above a woman on a bench (9:16): a payment, a 10K-views milestone and a message drop in 0.85 s apart. Each new banner lands in front and the older ones tuck behind into a pile, then the pile lifts off the top.",
+      "poster": "gallery/ios-lock-screen.webp",
+      "preview": "gallery/ios-lock-screen.mp4"
+    },
+    {
+      "id": "macos-launch-day",
+      "name": "macOS banners, launch day",
+      "description": "Light Mac notification-centre banners slide in at the top right beside a speaker at her laptop: payment received, a new signup and a deploy, 1.1 s apart. Each one pushes the earlier ones down, then the stack slides back out to the right.",
+      "poster": "gallery/macos-launch-day.webp",
+      "preview": "gallery/macos-launch-day.mp4"
+    },
+    {
+      "id": "android-order-rush",
+      "name": "Android heads-up, order rush",
+      "description": "Dark Android heads-up cards over night footage, top right. Each card has a round icon, an 'App \u2022 now' header and an expand chevron. Three orange 'New order' cards arrive 0.8 s apart, then an amber 'Daily goal reached' card, and the oldest card fades once more than three are on screen.",
+      "poster": "gallery/android-order-rush.webp",
+      "preview": "gallery/android-order-rush.mp4"
+    }
+  ]
+}
