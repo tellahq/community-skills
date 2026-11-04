@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "flat-launch-japan",
+      "name": "Flat launch (Japan)",
+      "description": "Flat light map. The camera flies in from the whole globe and lands on Japan, which fills in indigo. A Tokyo pin pulses, a leader line draws out, and the text 'Launching in Japan' comes in with the stat '12,400 people on the Tokyo waitlist' (fictional brand Quillmarrow Notes).",
+      "poster": "gallery/flat-launch-japan.webp",
+      "preview": "gallery/flat-launch-japan.mp4"
+    },
+    {
+      "id": "watercolour-nordics",
+      "name": "Watercolour (Nordics)",
+      "description": "Watercolour-paper map. The camera flies in from a paper globe to the Nordics, and Norway, Sweden, Finland and Denmark wash in one after another as the turbulent pigment settles, with pooled edges and paper grain. The headline 'Now shipping to the Nordics' is in Playfair, and the country labels and the stat '3,200 pre-orders' are in Caveat with a hand-drawn underline.",
+      "poster": "gallery/watercolour-nordics.webp",
+      "preview": "gallery/watercolour-nordics.mp4"
+    },
+    {
+      "id": "dark-multi-country-latam",
+      "name": "Dark multi-country (Latin America)",
+      "description": "Flat dark map with several countries. The camera flies in from the whole globe to Latin America, then Mexico, Colombia and Brazil fill in a teal glow one after another, each with a pill showing its role count. The headline is 'Now hiring across Latin America' with a big '45 open roles' stat (fictional brand Kitebird).",
+      "poster": "gallery/dark-multi-country-latam.webp",
+      "preview": "gallery/dark-multi-country-latam.mp4"
+    }
+  ]
+}

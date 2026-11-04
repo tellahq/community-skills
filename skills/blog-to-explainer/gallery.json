@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": "paper-story",
+      "name": "Paper",
+      "description": "Help docs post: the title is set beside the scrolling page in a cobalt field, which slides into a half-frame ~60 count-up, then becomes a top band over a steps line with a travelling playhead.",
+      "poster": "gallery/paper-story.webp",
+      "preview": "gallery/paper-story.mp4"
+    },
+    {
+      "id": "midnight-rules",
+      "name": "Midnight",
+      "description": "Brand colours post: a full amber field with per-word kinetic type shrinks into a black/amber split, then turns into a frame filled with vintage film beside the rule.",
+      "poster": "gallery/midnight-rules.webp",
+      "preview": "gallery/midnight-rules.mp4"
+    },
+    {
+      "id": "moss-serif",
+      "name": "Serif brand theme",
+      "description": "Blob camera post in a deep green, Playfair Display theme: title beside the page, a full-frame serif statement, then three steps under a top band.",
+      "poster": "gallery/moss-serif.webp",
+      "preview": "gallery/moss-serif.mp4"
+    },
+    {
+      "id": "brand-results",
+      "name": "Vermilion brand theme",
+      "description": "Help docs results in a vermilion DM Sans theme: a proportional bar with big legend figures, a ring growing from 29% to 52%, and an end card with the link set large in a bottom band.",
+      "poster": "gallery/brand-results.webp",
+      "preview": "gallery/brand-results.mp4"
+    }
+  ]
+}
