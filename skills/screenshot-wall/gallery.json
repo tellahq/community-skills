@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "recap-headline",
+      "name": "Recap headline",
+      "description": "A light wall of fictional app screenshots drifting in perspective behind a centred product title and line.",
+      "poster": "gallery/recap-headline.webp",
+      "preview": "gallery/recap-headline.mp4"
+    },
+    {
+      "id": "launch-wall",
+      "name": "Launch wall",
+      "description": "A dark wall of captured tella.com pages drifting in perspective; one page flies forward and fills the frame.",
+      "poster": "gallery/launch-wall.webp",
+      "preview": "gallery/launch-wall.mp4"
+    },
+    {
+      "id": "portrait-social",
+      "name": "Portrait social",
+      "description": "A 9:16 wall on deep plum; the hero screenshot flies forward and the product title lands under it.",
+      "poster": "gallery/portrait-social.webp",
+      "preview": "gallery/portrait-social.mp4"
+    }
+  ]
+}
