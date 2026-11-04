@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "launch-week",
+      "name": "Launch week",
+      "description": "White and red LAUNCH WEEK repeated on four walls rushing at the viewer, landing flat with a date line.",
+      "poster": "gallery/launch-week.webp",
+      "preview": "gallery/launch-week.mp4"
+    },
+    {
+      "id": "manifesto",
+      "name": "Manifesto",
+      "description": "A light serif tunnel of SAY LESS that clears to the line \"Say less. Show more.\"",
+      "poster": "gallery/manifesto.webp",
+      "preview": "gallery/manifesto.mp4"
+    },
+    {
+      "id": "intro-over-footage",
+      "name": "Intro over footage",
+      "description": "A neon THE BIG CITY tunnel that opens onto archive skyline footage with the title over it.",
+      "poster": "gallery/intro-over-footage.webp",
+      "preview": "gallery/intro-over-footage.mp4"
+    }
+  ]
+}
