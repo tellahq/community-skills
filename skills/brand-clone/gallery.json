@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": "kit-board",
+      "name": "Kit board",
+      "description": "tella.com is captured, then its colours, type, radii and icons are pulled out into a kit board beside the page.",
+      "poster": "gallery/kit-board.webp",
+      "preview": "gallery/kit-board.mp4"
+    },
+    {
+      "id": "opener-lower-third",
+      "name": "Opener and lower third",
+      "description": "An opener in tella.com's own layout, with a two-tone headline and a pill button, and the interview playing in the site's frame. It grows into full-screen footage with a lower third in the same style.",
+      "poster": "gallery/opener-lower-third.webp",
+      "preview": "gallery/opener-lower-third.mp4"
+    },
+    {
+      "id": "quote-end-card",
+      "name": "Quote card and end card",
+      "description": "The speaker in a rounded camera card beside a two-tone serif quote, then an end card with the site's buttons and its tab row.",
+      "poster": "gallery/quote-end-card.webp",
+      "preview": "gallery/quote-end-card.mp4"
+    },
+    {
+      "id": "second-brand",
+      "name": "Second brand (fictional)",
+      "description": "The same pieces cloned from a fictional serif publisher brand, with cream paper, vermilion and hairline rules, which shows the kit is not tied to Tella.",
+      "poster": "gallery/second-brand.webp",
+      "preview": "gallery/second-brand.mp4"
+    }
+  ]
+}
