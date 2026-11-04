@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": "vhs-home-video",
+      "name": "VHS home video",
+      "description": "Beach footage with chroma bleed, tracking lines, noise and a PLAY / date OSD.",
+      "poster": "gallery/vhs-home-video.webp",
+      "preview": "gallery/vhs-home-video.mp4"
+    },
+    {
+      "id": "crt-screen",
+      "name": "CRT screen",
+      "description": "Archive rocket-launch footage on a curved CRT with scanlines, vignette and glow.",
+      "poster": "gallery/crt-screen.webp",
+      "preview": "gallery/crt-screen.mp4"
+    },
+    {
+      "id": "halftone-print",
+      "name": "Halftone print",
+      "description": "Archive car footage turned into a warm halftone print, then back to clean.",
+      "poster": "gallery/halftone-print.webp",
+      "preview": "gallery/halftone-print.mp4"
+    },
+    {
+      "id": "photocopier",
+      "name": "Photocopier",
+      "description": "A speaker cuts to a high-contrast photocopied look with grain, behind a lower-third label.",
+      "poster": "gallery/photocopier.webp",
+      "preview": "gallery/photocopier.mp4"
+    }
+  ]
+}
