@@ -1,0 +1,62 @@
+// Glitch stinger for Tella Motion: addEffect kind "shader", backdrop: true, on a transparent fill.
+// `image` is everything drawn beneath the overlay.
+// Key `amt` (0..1, hold keys), bind `seed` to floor(time * 15); the rest set the preset.
+uniform shader image;
+uniform float2 resolution;
+uniform float amt;     // envelope, 0 = untouched, 1 = full preset strength
+uniform float seed;    // changes the random pattern; step it ~15 times a second
+uniform float rgb;     // RGB split at full strength, px (at 1080p)
+uniform float slice;   // horizontal slice displacement at full strength, px
+uniform float blocks;  // 0..1, how many blocks tear and pixelate
+uniform float noise;   // 0..1, static mixed in
+uniform float flash;   // 0..1, white lift for a one-frame flash (key it separately)
+
+float h1(float n) { return fract(sin(n * 127.1) * 43758.5453); }
+float h2(float2 q) { return fract(sin(dot(q, float2(12.9898, 78.233))) * 43758.5453); }
+
+half4 samp(float2 q) {
+  q = clamp(q, float2(0.5), resolution - 0.5);
+  return image.eval(q);
+}
+
+half4 main(float2 p) {
+  if (amt <= 0.001 && flash <= 0.001) { return image.eval(p); }
+  float k = resolution.y / 1080.0;            // scale px values to the canvas
+  float2 uv = p;
+  float torn = 0.0;                            // 1 on a displaced slice
+  // thin slices
+  float bandH = mix(10.0, 70.0, h1(seed + 0.37)) * k;
+  float band = floor(p.y / bandH);
+  if (h2(float2(band, seed)) < 0.10 + 0.30 * amt) {
+    uv.x += (h2(float2(band, seed + 7.0)) - 0.5) * 2.0 * slice * k * amt;
+    torn = 1.0;
+  }
+  // thick slabs
+  float bandH2 = mix(60.0, 240.0, h1(seed + 4.2)) * k;
+  float band2 = floor(p.y / bandH2);
+  if (h2(float2(band2, seed + 11.0)) < 0.20 * amt) {
+    uv.x += (h2(float2(band2, seed + 13.0)) - 0.5) * 1.4 * slice * k * amt;
+  }
+  // block tearing: displaced, pixelated rectangles
+  float2 bs = float2(mix(64.0, 220.0, h1(seed + 1.0)), mix(20.0, 90.0, h1(seed + 2.0))) * k;
+  float2 cell = floor(p / bs);
+  if (h2(cell + seed * 1.7) < blocks * amt * 0.3) {
+    uv += (float2(h2(cell + seed + 3.0), h2(cell + seed + 5.0)) - 0.5) * float2(260.0, 30.0) * k * amt;
+    float px = 20.0 * k;
+    uv = floor(uv / px) * px + px * 0.5;
+  }
+  // RGB split
+  float s = rgb * k * amt * (0.5 + 0.5 * h1(seed + 9.0)) * (1.0 + 1.5 * torn);
+  half4 cr = samp(uv + float2(s, 0.0));
+  half4 cg = samp(uv);
+  half4 cb = samp(uv - float2(s, s * 0.25));
+  half4 c = half4(cr.r, cg.g, cb.b, max(cg.a, max(cr.a, cb.a)));
+  // static and scanlines
+  float n = h2(floor(p / (2.0 * k)) + seed * 13.0);
+  c.rgb = mix(c.rgb, half3(n), half(noise * amt * 0.55));
+  float line = step(0.5, fract(p.y / (4.0 * k)));
+  c.rgb *= half(1.0 - 0.18 * amt * line);
+  // flash
+  c.rgb = mix(c.rgb, half3(0.92 + 0.08 * n), half(flash));
+  return c;
+}

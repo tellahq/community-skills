@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": "signal-tear",
+      "name": "Signal tear",
+      "description": "A strong tear with RGB split and slice displacement at a cut from neon street b-roll to a woman at a desk.",
+      "poster": "gallery/signal-tear.webp",
+      "preview": "gallery/signal-tear.mp4"
+    },
+    {
+      "id": "hard-crash-into-title",
+      "name": "Hard crash into a title",
+      "description": "Street footage breaks into blocks and crashes into a dark section title card.",
+      "poster": "gallery/hard-crash-into-title.webp",
+      "preview": "gallery/hard-crash-into-title.mp4"
+    },
+    {
+      "id": "b-roll-in-and-out",
+      "name": "B-roll in and out",
+      "description": "Glitches mark where neon street b-roll cuts in over a speaker and where it leaves.",
+      "poster": "gallery/b-roll-in-and-out.webp",
+      "preview": "gallery/b-roll-in-and-out.mp4"
+    },
+    {
+      "id": "chroma-blip-punch-ins",
+      "name": "Chroma blip punch-ins",
+      "description": "Subtle chromatic blips on punch-ins within one shot of a woman at a desk.",
+      "poster": "gallery/chroma-blip-punch-ins.webp",
+      "preview": "gallery/chroma-blip-punch-ins.mp4"
+    }
+  ]
+}
