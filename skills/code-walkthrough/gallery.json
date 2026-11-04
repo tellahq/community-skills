@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "midnight-diff",
+      "name": "Midnight diff",
+      "description": "Dark TypeScript panel: a fetch call is highlighted, then a cache lands as green added lines while the rest dims.",
+      "poster": "gallery/midnight-diff.webp",
+      "preview": "gallery/midnight-diff.mp4"
+    },
+    {
+      "id": "paper-focus",
+      "name": "Paper focus",
+      "description": "Light Python panel that steps through a sync job one highlighted line at a time, ending with a one-line retry change.",
+      "poster": "gallery/paper-focus.webp",
+      "preview": "gallery/paper-focus.mp4"
+    },
+    {
+      "id": "ember-overlay",
+      "name": "Ember overlay",
+      "description": "A small dark code card beside a speaker: a loop is struck out in red and replaced by a reduce in green.",
+      "poster": "gallery/ember-overlay.webp",
+      "preview": "gallery/ember-overlay.mp4"
+    }
+  ]
+}
