@@ -17,7 +17,6 @@ metadata:
   image: og.jpg
   poster: gallery/beacon-keynote-opener.webp
   preview: gallery/beacon-keynote-opener.mp4
-  tags: light rays, god rays, keynote, opener, title card, shader, glow, event, chapter card, loop, background
   prompt: Open the video with an 8-second keynote card for "Northwind Live", with KEYNOTE above it and "12 March · Online" below, in our blue.
 ---
 

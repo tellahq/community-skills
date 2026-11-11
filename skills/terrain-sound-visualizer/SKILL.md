@@ -19,7 +19,6 @@ metadata:
   image: og.jpg
   poster: gallery/terrain-night-shift.webp
   preview: gallery/terrain-night-shift.mp4
-  tags: audio, music, visualizer, audio-reactive, beats, synthwave, retrowave, wireframe, terrain, shader, title, background
   prompt: Make a 10 second synthwave terrain visualizer for our background music with the title "Orbit Hours" glowing above the horizon.
 ---
 

@@ -15,7 +15,6 @@ metadata:
   image: og.jpg
   poster: gallery/launch-channel.webp
   preview: gallery/launch-channel.mp4
-  tags: slack, chat, team chat, messages, reactions, typing, ui, app mockup, launch, b-roll
   prompt: When I say I posted the launch in Slack, show me typing it into our #launches channel and the team reacting.
 ---
 

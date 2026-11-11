@@ -19,7 +19,6 @@ metadata:
   image: og.jpg
   poster: gallery/amalfi-coast-2026.webp
   preview: gallery/amalfi-coast-2026.mp4
-  tags: photos, collage, snapshots, pile, recap, trip, memories, opener, title, motion blur
   prompt: Open my trip video with these photos thrown onto a table and a label that says Lisbon 2026.
 ---
 

@@ -21,7 +21,6 @@ metadata:
   image: og.jpg
   poster: gallery/ascii-ice-blue.webp
   preview: gallery/ascii-ice-blue.mp4
-  tags: audio, waveform, ascii, terminal, visualizer, audio-reactive, music, voice, shader, characters, dark, retro
   prompt: Turn the last 10 seconds of my voice into an ASCII waveform in ice blue, with the title "Northwind Notes" over it.
 ---
 

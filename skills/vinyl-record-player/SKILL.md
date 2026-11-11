@@ -20,7 +20,6 @@ metadata:
   image: og.jpg
   poster: gallery/needle-drop.webp
   preview: gallery/needle-drop.mp4
-  tags: vinyl, record, turntable, needle drop, music, podcast, intro, audio, spin, photo cut-out
   prompt: Open my podcast episode with a record player whose needle drops on our theme, with "Low Tide Hours" and "Maya Ortiz" on the label.
 ---
 

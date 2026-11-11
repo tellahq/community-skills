@@ -20,7 +20,6 @@ metadata:
   image: og.jpg
   poster: gallery/imessage-phone-16x9.webp
   preview: gallery/imessage-phone-16x9.mp4
-  tags: imessage, iphone, ios, messages, text messages, chat, sms, phone, ui, camera moves, typing, tapback
   prompt: Show our text exchange about lunch as an iMessage conversation on an iPhone, with close-ups as each message arrives and my reply typed and sent at the end.
 ---
 

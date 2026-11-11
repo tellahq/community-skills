@@ -20,7 +20,6 @@ metadata:
   image: og.jpg
   poster: gallery/back-to-building.webp
   preview: gallery/back-to-building.mp4
-  tags: interview, documentary, title, name tag, lower third, typewriter, speaker intro, opening, overlay, kinetic type
   prompt: Open this interview with a big typed-on title, "Made by Hand", then put my name and role in the bottom-left corner.
 ---
 

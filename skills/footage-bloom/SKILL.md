@@ -18,7 +18,6 @@ metadata:
   image: og.jpg
   poster: gallery/anamorphic-bloom.webp
   preview: gallery/anamorphic-bloom.mp4
-  tags: bloom, glow, halation, anamorphic, lens flare, streaks, cinematic, night, lights, footage, shader
   prompt: When I say "that's when the city lit up", make the street lights bloom with blue anamorphic streaks and let it settle after the sentence.
 ---
 

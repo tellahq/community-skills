@@ -19,7 +19,6 @@ metadata:
   image: og.jpg
   poster: gallery/cassette-tapes.webp
   preview: gallery/cassette-tapes.mp4
-  tags: stop motion, intro, opener, product, flat lay, cutting mat, 12 fps, logo reveal, end card, handmade
   prompt: Make a stop-motion intro with my two notebooks hopping around on a green cutting mat, ending on the Northwind Notes logo.
 ---
 

@@ -18,7 +18,6 @@ metadata:
   image: og.jpg
   poster: gallery/manifesto.webp
   preview: gallery/manifesto.mp4
-  tags: typography, manifesto, kinetic type, statement, justified type, archive film, opener, brand, mission, slogan
   prompt: Open the video with a manifesto of "Ship small / Ship often / Let it run / For years", with archive film in the gaps and YEARS in orange.
 ---
 

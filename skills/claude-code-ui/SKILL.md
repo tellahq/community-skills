@@ -20,7 +20,6 @@ metadata:
   image: og.jpg
   poster: gallery/claude-code-session.webp
   preview: gallery/claude-code-session.mp4
-  tags: claude code, coding agent, terminal, cli, ai agent, diff, tests, typing, ui, macos, developer, b-roll
   prompt: When I say "so I asked Claude Code to fix it", show a Claude Code session that fixes the rounding bug in convert.ts and runs the tests.
 ---
 

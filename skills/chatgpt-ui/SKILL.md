@@ -16,7 +16,6 @@ metadata:
   image: og.jpg
   poster: gallery/chatgpt-launch-plan.webp
   preview: gallery/chatgpt-launch-plan.mp4
-  tags: chatgpt, ai chat, ui recreation, animated ui, typing, streaming text, chatbot, b-roll, product demo
   prompt: When I say "so I asked ChatGPT", show me typing the question into ChatGPT and the answer streaming in.
 ---
 

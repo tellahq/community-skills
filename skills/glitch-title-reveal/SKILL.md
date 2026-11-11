@@ -17,7 +17,6 @@ metadata:
   image: og.jpg
   poster: gallery/slab-title-over-footage.webp
   preview: gallery/slab-title-over-footage.mp4
-  tags: glitch, title, chapter title, text reveal, rgb split, scanlines, datamosh, vhs, lower third, overlay, retro
   prompt: When I start talking about the paper trail, glitch a chapter title onto the footage in a black box, lower left.
 ---
 

@@ -20,7 +20,6 @@ metadata:
   image: og.jpg
   poster: gallery/tella-launch.webp
   preview: gallery/tella-launch.mp4
-  tags: website, landing page, trailer, 3D, camera move, tilt-shift, depth of field, kinetic type, launch, teaser
   prompt: Make a 12-second cinematic fly-through of northwindnotes.com that cuts to "Capture", "Organize" and "Share" and ends on the site's name.
 ---
 

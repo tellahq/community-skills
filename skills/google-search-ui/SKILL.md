@@ -16,7 +16,6 @@ metadata:
   image: og.jpg
   poster: gallery/google-search.webp
   preview: gallery/google-search.mp4
-  tags: google, search, chrome, browser, ui, typing, autocomplete, results, cursor, product demo
   prompt: When I say "just search for us", show someone googling "tella ai video editor" in Chrome and clicking through to our page.
 ---
 

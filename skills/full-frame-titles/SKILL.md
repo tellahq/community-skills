@@ -19,7 +19,6 @@ metadata:
   image: og.jpg
   poster: gallery/dream.webp
   preview: gallery/dream.mp4
-  tags: title, film title, cinematic, typography, full frame, overlay, serif, opening, trailer, documentary
   prompt: Two seconds in, put a giant full-frame title over the footage that says DRIFT, with a small subtitle "a film about slowing down" beside it.
 ---
 

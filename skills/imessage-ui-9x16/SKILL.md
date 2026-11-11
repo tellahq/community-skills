@@ -19,7 +19,6 @@ metadata:
   image: og.jpg
   poster: gallery/imessage-portrait.webp
   preview: gallery/imessage-portrait.mp4
-  tags: imessage, iphone, ios, messages, text messages, chat, sms, phone, ui, typing, vertical, tapback
   prompt: Show this text exchange as an iMessage conversation on an iPhone filling the frame, with my reply typed and sent at the end.
 ---
 

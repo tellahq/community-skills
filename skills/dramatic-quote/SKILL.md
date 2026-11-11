@@ -17,7 +17,6 @@ metadata:
   image: og.jpg
   poster: gallery/jutland-courier.webp
   preview: gallery/jutland-courier.mp4
-  tags: quote, press quote, review, trailer, serif, cinematic, text overlay, attribution, typography
   prompt: Put "a quiet, aching film that stays with you long after it ends" from Maya Ortiz at The Northwind Review over slow misty footage, like a trailer.
 ---
 

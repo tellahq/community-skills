@@ -19,7 +19,6 @@ metadata:
   image: og.jpg
   poster: gallery/hard-hit.webp
   preview: gallery/hard-hit.mp4
-  tags: transition, shake, camera shake, impact, hard cut, punch, warp, motion blur, beat, montage, shader, hype
   prompt: Make the cut into the launch shot hit hard, with a boom on it, on the beat of the music.
 ---
 

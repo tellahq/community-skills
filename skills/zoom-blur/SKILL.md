@@ -19,7 +19,6 @@ metadata:
   image: og.jpg
   poster: gallery/zoom-blur-ollie.webp
   preview: gallery/zoom-blur-ollie.mp4
-  tags: zoom blur, radial blur, speed blur, punch, impact, beat, footage, shader, chromatic, sports, hype
   prompt: When the board pops at 0:04, hit the footage with a zoom blur pulling from the board and let it settle.
 ---
 

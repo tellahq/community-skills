@@ -22,7 +22,6 @@ metadata:
   image: og.jpg
   poster: gallery/calculator-pendulum.webp
   preview: gallery/calculator-pendulum.mp4
-  tags: calculator, lcd, dot matrix, retro, formula, maths, physics, plot, graph, rpn, explainer, shader
   prompt: Show the pendulum formula T=2π√(L/g) being worked out on an old graphing calculator for L = 2.5 m, then plot the swing.
 ---
 
