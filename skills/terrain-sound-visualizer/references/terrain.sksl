@@ -1,0 +1,112 @@
+// Terrain: a wireframe landscape the camera flies over. Each row of ridges is
+// raised by the sound at the moment it appears on the horizon and keeps that
+// height as it comes toward the camera, so the track's shape flows past below.
+// Drawn row by row from near to far with a running silhouette, so nearer
+// ridges hide the lines behind them (a hidden-line wireframe, no ray-marching).
+// From the terrain-sound-visualizer skill (camH 1.6, far rows melt into the haze).
+uniform shader image;
+uniform float2 resolution;   // bound to the node's size by the renderer
+uniform float time;          // bind to the clock (seconds)
+uniform float level;         // 0-1, the sound now (curve lvl)
+uniform half4 hA;            // sound history, newest first: h0..h3
+uniform half4 hB;            // h4..h7
+uniform half4 hC;            // h8..h11
+uniform half4 hD;            // h12..h15 (oldest, nearest the camera)
+uniform half4 sky;           // top of the sky
+uniform half4 haze;          // horizon glow and distance fog
+uniform half4 ground;        // the filled ground between the lines
+uniform half4 lineColor;     // grid lines in the valleys
+uniform half4 peakColor;     // grid lines on the high ridges
+uniform float speed;         // flight speed, world units a second (3)
+uniform float histStep;      // seconds between history samples (must match the h curves)
+uniform float height;        // ridge height at full level, world units (1.6)
+uniform float cell;          // grid cell, world units (0.5); 56 rows reach 28 units away
+uniform float horizon;       // 0-1 from the top, where the horizon sits (0.42)
+
+float hist(float u) {
+  // a smooth kernel over the 16 samples, branch-free: no corners between samples
+  u = clamp(u, 0.0, 15.0);
+  float4 a = smoothstep(1.6, 0.0, abs(float4(0.0, 1.0, 2.0, 3.0) - u));
+  float4 b = smoothstep(1.6, 0.0, abs(float4(4.0, 5.0, 6.0, 7.0) - u));
+  float4 c = smoothstep(1.6, 0.0, abs(float4(8.0, 9.0, 10.0, 11.0) - u));
+  float4 d = smoothstep(1.6, 0.0, abs(float4(12.0, 13.0, 14.0, 15.0) - u));
+  float4 one = float4(1.0);
+  return (dot(float4(hA), a) + dot(float4(hB), b) + dot(float4(hC), c) + dot(float4(hD), d))
+       / max(1e-4, dot(a, one) + dot(b, one) + dot(c, one) + dot(d, one));
+}
+float hash(float2 p) { return fract(sin(dot(p, float2(127.1, 311.7))) * 43758.5453); }
+float vnoise(float2 p) {
+  float2 i = floor(p), f = fract(p);
+  float2 u = f * f * (3.0 - 2.0 * f);
+  return mix(mix(hash(i), hash(i + float2(1, 0)), u.x), mix(hash(i + float2(0, 1)), hash(i + float2(1, 1)), u.x), u.y);
+}
+float ridges(float2 p) {
+  float n1 = 1.0 - abs(2.0 * vnoise(p) - 1.0);
+  float n2 = 1.0 - abs(2.0 * vnoise(p * 2.07 + float2(17.1, 9.3)) - 1.0);
+  return 0.7 * n1 * n1 + 0.3 * n2 * n2;
+}
+
+half4 main(float2 p) {
+  float2 res = resolution;
+  float f = 1.5 * res.y;                   // focal length, px
+  float hy = horizon * res.y;              // horizon, px from the top
+  float camH = 1.6;
+  float camZ = time * speed;
+  float camX = 0.35 * sin(time * 0.21);
+  float D = 15.0 * speed * histStep;       // depth the history covers
+
+  float up = (hy - p.y) / res.y;
+  half3 skyCol = mix(haze.rgb, sky.rgb, half(smoothstep(-0.02, 0.4, up)));
+  skyCol += haze.rgb * half(0.4 * exp(-abs(up) * 16.0) * (0.7 + 0.5 * level));
+
+  float occl = 1e5;          // the silhouette of the nearer rows, px from the top
+  float yPrev = 1e5;
+  float dPrev = 0.0;
+  float lineH = 0.0;         // ridge lines (rows across)
+  half3 lineC = lineColor.rgb;
+  float owned = 0.0;         // 1 once the pixel is ground
+  half3 col = skyCol;
+  float k0 = floor(camZ / cell) + 1.0;
+  for (int r = 0; r < 56; r++) {
+    float z = (k0 + float(r)) * cell;
+    float depth = z - camZ;
+    float xw = camX + (p.x - 0.5 * res.x) * depth / f;
+    float idx = clamp((D - depth) / (speed * histStep), 0.0, 15.0);
+    float amp = 0.12 + height * (0.25 * level + 0.75 * hist(idx));
+    float valley = 0.3 + 0.7 * smoothstep(0.4, 2.6, abs(xw));
+    float h = ridges(float2(xw, z) * 0.38) * amp * valley;
+    float y = hy + f * (camH - h) / depth;
+    float fog = exp(-depth * 0.06);
+    float spacing = f * cell * camH / (depth * depth);           // px between flat rows here
+    float vis = smoothstep(1.5, 5.0, spacing);
+    half3 lc = mix(lineColor.rgb, peakColor.rgb, half(smoothstep(0.25, 1.0, h / max(height, 0.01))));
+    if (owned < 0.5) {
+      // this row's ridge line, where it is not behind nearer ground
+      if (p.y <= occl + 1.0) {
+        float a = (1.0 - smoothstep(0.7, 2.0, abs(p.y - y))) * mix(0.3, 1.0, vis) * fog * (1.0 - smoothstep(19.0, 27.5, depth));
+        if (a > lineH) { lineH = a; lineC = lc; }
+      }
+      if (p.y >= y && p.y <= occl) {
+        // the pixel is on the patch between the previous row and this one
+        float fr = clamp((p.y - y) / max(yPrev - y, 1e-3), 0.0, 1.0);
+        float dd = mix(depth, dPrev, fr);
+        float xg = camX + (p.x - 0.5 * res.x) * dd / f;
+        float gx = abs(fract(xg / cell + 0.5) - 0.5) * cell * f / dd;   // px to the nearest line along the flight
+        float lv = (1.0 - smoothstep(0.7, 2.0, gx)) * mix(0.25, 0.9, vis) * fog;
+        float fogp = exp(-dd * 0.06);
+        half3 gcol = mix(haze.rgb * 0.8, ground.rgb, half(fogp));
+        col = mix(gcol, lc, half(lv));
+        col = mix(col, skyCol, half(smoothstep(19.0, 27.5, dd)));   // the far rows melt into the haze
+        owned = 1.0;
+      }
+      occl = min(occl, y);
+    }
+    yPrev = y;
+    dPrev = depth;
+  }
+  col = mix(col, lineC, half(lineH));
+  float2 v = p / res - 0.5;
+  col *= half(1.0 - 0.5 * dot(v, v));
+  return half4(col, 1.0) * image.eval(p).a;
+}
+

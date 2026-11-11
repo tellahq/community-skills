@@ -1,0 +1,42 @@
+// Twinkling stars: a scatter of soft points in the sky above the horizon.
+// Each cell of the grid may hold one star with its own size, brightness and
+// twinkle speed; stars fade out towards the horizon glow.
+// From the terrain-sound-visualizer skill.
+uniform shader image;
+uniform float2 resolution;   // bound to the node's size by the renderer
+uniform float time;          // bind to the clock (seconds)
+uniform float horizon;       // 0-1 from the top, where the horizon sits
+uniform float density;       // share of grid cells holding a star (0-1)
+uniform float brightness;    // overall star brightness
+
+float hash(float2 c) { return tella_hash2d(c); }   // Tella's hash: whole-number cells, the same on every GPU
+
+half4 main(float2 p) {
+  float hy = horizon * resolution.y;
+  float fade = 1.0 - smoothstep(hy * 0.45, hy * 0.92, p.y);
+  if (fade <= 0.0) { return half4(0); }
+  float cs = 34.0;
+  float2 cell = floor(p / cs);
+  float a = 0.0;
+  for (int j = 0; j < 3; j++) {
+    for (int i = 0; i < 3; i++) {
+      float2 c = cell + float2(float(i) - 1.0, float(j) - 1.0);
+      if (hash(c) < density) {
+        float2 pos = (c + float2(hash(c + float2(31.0, 57.0)), hash(c + float2(73.0, 19.0)))) * cs;
+        float r = 0.7 + 1.5 * pow(hash(c + float2(11.0, 97.0)), 3.0);
+        float d = length(p - pos);
+        float core = smoothstep(r + 0.9, r * 0.25, d);
+        float halo = exp(-d * d / (r * r * 7.0)) * 0.3;
+        float sp = 1.2 + 3.8 * hash(c + float2(59.0, 41.0));
+        float ph = 6.2831 * hash(c + float2(94.0, 13.0));
+        float tw = 0.5 + 0.5 * sin(time * sp + ph);
+        tw = tw * tw;
+        float base = 0.3 + 0.7 * hash(c + float2(17.0, 83.0));
+        a = max(a, (core + halo) * base * (0.2 + 0.8 * tw));
+      }
+    }
+  }
+  a = clamp(a * fade * brightness, 0.0, 1.0);
+  return half4(half3(0.96, 0.94, 1.0) * a, a);
+}
+
