@@ -1,0 +1,13 @@
+// Vignette drawn with its own alpha, so it darkens whatever the overlay sits on.
+// amount: strength; size: radius of the untouched centre (fraction of height); softness: falloff width.
+uniform shader image;
+uniform float2 resolution;
+uniform float amount;
+uniform float size;
+uniform float softness;
+
+half4 main(float2 p) {
+  float d = length(p - resolution * 0.5) / resolution.y;
+  float a = amount * smoothstep(size, size + max(softness, 0.0001), d);
+  return half4(0.0, 0.0, 0.0, a);
+}

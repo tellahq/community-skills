@@ -1,0 +1,50 @@
+// Block glitch for type: slice offsets, RGB split, pixelated blocks. addEffect kind "shader".
+// Put it on the title's group (slab + text) in a transparent full-frame overlay, NOT as a backdrop:
+// a backdrop there would tear the footage too. `image` is in canvas px and its alpha is kept.
+// Key `amt` with hold keys every 1/15 s; bind `seed` to floor(time * 15) + 37.
+uniform shader image;
+uniform float2 resolution;
+uniform float amt;     // envelope: 0 untouched, 1 full strength
+uniform float seed;    // pattern; step it 15 times a second
+uniform float rgb;     // RGB split at full strength, px at 1080p
+uniform float slice;   // slice offset at full strength, px at 1080p
+uniform float mosaic;  // 0..1, how many blocks break off and pixelate
+
+float hash(float2 p) {
+  float3 p3 = fract(float3(p.x, p.y, p.x) * 0.1031);
+  p3 += dot(p3, p3.yzx + 33.33);
+  return fract((p3.x + p3.y) * p3.z);
+}
+
+half4 samp(float2 q) {
+  return image.eval(clamp(q, float2(0.5), resolution - 0.5));
+}
+
+half4 main(float2 p) {
+  if (amt <= 0.001) { return image.eval(p); }
+  float k = resolution.y / 1080.0;
+  float2 uv = p;
+  // thin slices
+  float bh = mix(12.0, 56.0, hash(float2(seed, 1.3))) * k;
+  float b = floor(p.y / bh);
+  float torn = step(hash(float2(b, seed)), 0.12 + 0.4 * amt);
+  uv.x += torn * (hash(float2(b, seed + 7.0)) - 0.5) * 2.0 * slice * k * amt;
+  // thick slabs
+  float sh = mix(70.0, 240.0, hash(float2(seed, 4.1))) * k;
+  float sb = floor(p.y / sh);
+  uv.x += step(hash(float2(sb, seed + 11.0)), 0.3 * amt) * (hash(float2(sb, seed + 13.0)) - 0.5) * 1.3 * slice * k * amt;
+  // mosaic blocks: displaced and pixelated
+  float2 bs = float2(mix(90.0, 280.0, hash(float2(seed, 2.2))), mix(28.0, 110.0, hash(float2(seed, 3.3)))) * k;
+  float2 cell = floor(p / bs);
+  if (hash(cell + seed * 1.7) < mosaic * amt * 0.45) {
+    uv += (float2(hash(cell + seed + 3.0), hash(cell + seed + 5.0)) - 0.5) * float2(240.0, 28.0) * k * amt;
+    float px = mix(12.0, 30.0, hash(cell + 9.0)) * k;
+    uv = floor(uv / px) * px + px * 0.5;
+  }
+  // RGB split, wider on torn slices
+  float s = rgb * k * amt * (0.6 + 0.4 * hash(float2(seed, 9.0))) * (1.0 + 1.2 * torn);
+  half4 cr = samp(uv + float2(s, 0.0));
+  half4 cg = samp(uv);
+  half4 cb = samp(uv - float2(s, s * 0.2));
+  return half4(cr.r, cg.g, cb.b, max(cg.a, max(cr.a, cb.a)));
+}
