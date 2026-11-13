@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Glitch transitions
   author: Tella
-  category: Transition screens
+  category: Transitions
   image: og.jpg
   poster: gallery/signal-tear.webp
   preview: gallery/signal-tear.mp4

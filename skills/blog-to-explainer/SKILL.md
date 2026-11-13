@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Blog post to explainer
   author: Tella
-  category: Editing
+  category: Editing & effects
   image: og.jpg
   poster: gallery/paper-story.webp
   preview: gallery/paper-story.mp4

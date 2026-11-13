@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: "iMessage UI (9:16)"
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/imessage-portrait.webp
   preview: gallery/imessage-portrait.mp4

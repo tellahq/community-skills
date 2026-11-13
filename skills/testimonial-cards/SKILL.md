@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Testimonial cards
   author: Tella
-  category: Images
+  category: Titles & text
   image: og.jpg
   poster: gallery/cobalt-spread.webp
   preview: gallery/cobalt-spread.mp4

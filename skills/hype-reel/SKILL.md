@@ -13,7 +13,7 @@ description: >-
 metadata:
   title: Hype reel
   author: Tella
-  category: Editing
+  category: Editing & effects
   image: og.jpg
   poster: gallery/machine-age.webp
   preview: gallery/machine-age.mp4

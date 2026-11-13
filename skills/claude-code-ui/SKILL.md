@@ -16,7 +16,7 @@ description: >-
 metadata:
   title: Claude Code UI
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/claude-code-session.webp
   preview: gallery/claude-code-session.mp4

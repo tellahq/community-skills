@@ -11,7 +11,7 @@ description: >-
 metadata:
   title: Flower transitions
   author: Louise de Sadeleer
-  category: Transition screens
+  category: Transitions
   image: og.jpg
   poster: gallery/bloom-wave.webp
   preview: gallery/bloom-wave.mp4

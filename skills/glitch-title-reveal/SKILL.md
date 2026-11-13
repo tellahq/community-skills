@@ -13,7 +13,7 @@ description: >-
 metadata:
   title: Glitch title reveal
   author: Tella
-  category: Images
+  category: Titles & text
   image: og.jpg
   poster: gallery/slab-title-over-footage.webp
   preview: gallery/slab-title-over-footage.mp4

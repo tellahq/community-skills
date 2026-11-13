@@ -14,7 +14,7 @@ description: >-
 metadata:
   title: Retro footage looks
   author: Tella
-  category: Editing
+  category: Editing & effects
   image: og.jpg
   poster: gallery/vhs-home-video.webp
   preview: gallery/vhs-home-video.mp4

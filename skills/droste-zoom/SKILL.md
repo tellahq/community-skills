@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Droste zoom
   author: Tella
-  category: Transition screens
+  category: Transitions
   image: og.jpg
   poster: gallery/app-to-chapter.webp
   preview: gallery/app-to-chapter.mp4

@@ -17,7 +17,7 @@ description: >-
 metadata:
   title: Brand clone
   author: Tella
-  category: Editing
+  category: Editing & effects
   image: og.jpg
   poster: gallery/kit-board.webp
   preview: gallery/kit-board.mp4

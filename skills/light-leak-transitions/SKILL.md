@@ -12,7 +12,7 @@ description: >-
 metadata:
   title: Light leak transitions
   author: Tella
-  category: Transition screens
+  category: Transitions
   image: og.jpg
   poster: gallery/amber-golden-hour.webp
   preview: gallery/amber-golden-hour.mp4

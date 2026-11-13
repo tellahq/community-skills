@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Zoom blur
   author: Tella
-  category: Editing
+  category: Editing & effects
   image: og.jpg
   poster: gallery/zoom-blur-ollie.webp
   preview: gallery/zoom-blur-ollie.mp4

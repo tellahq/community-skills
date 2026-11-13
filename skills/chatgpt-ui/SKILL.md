@@ -12,7 +12,7 @@ description: >-
 metadata:
   title: ChatGPT UI
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/chatgpt-launch-plan.webp
   preview: gallery/chatgpt-launch-plan.mp4

@@ -13,7 +13,7 @@ description: >-
 metadata:
   title: Text bubble stack
   author: Grant Shaddick
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/no-nope-nooooope.webp
   preview: gallery/no-nope-nooooope.mp4

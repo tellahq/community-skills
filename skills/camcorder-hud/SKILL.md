@@ -13,7 +13,7 @@ description: >-
 metadata:
   title: Camcorder HUD
   author: Louise de Sadeleer
-  category: Editing
+  category: Editing & effects
   image: og.jpg
   poster: references/reference-landscape.jpg
   prompt: Make this video look like it was filmed on an old camcorder, with a REC light, tape counter and date stamp.

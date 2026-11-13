@@ -16,7 +16,7 @@ description: >-
 metadata:
   title: Minimal statements
   author: Louise de Sadeleer
-  category: Transition screens
+  category: Titles & text
   image: og.jpg
   poster: gallery/rebuttal-02.webp
   preview: gallery/rebuttal-02.mp4

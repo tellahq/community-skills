@@ -13,7 +13,7 @@ description: >-
 metadata:
   title: Dramatic quote
   author: Tella
-  category: Images
+  category: Titles & text
   image: og.jpg
   poster: gallery/jutland-courier.webp
   preview: gallery/jutland-courier.mp4

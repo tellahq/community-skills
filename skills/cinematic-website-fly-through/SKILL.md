@@ -16,7 +16,7 @@ description: >-
 metadata:
   title: Cinematic website fly-through
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/tella-launch.webp
   preview: gallery/tella-launch.mp4

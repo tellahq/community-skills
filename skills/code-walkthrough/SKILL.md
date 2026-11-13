@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Code walkthrough
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/midnight-diff.webp
   preview: gallery/midnight-diff.mp4

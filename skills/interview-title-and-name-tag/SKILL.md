@@ -16,7 +16,7 @@ description: >-
 metadata:
   title: Interview title and name tag
   author: Tella
-  category: Images
+  category: Titles & text
   image: og.jpg
   poster: gallery/back-to-building.webp
   preview: gallery/back-to-building.mp4

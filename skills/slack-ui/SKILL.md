@@ -11,7 +11,7 @@ description: >-
 metadata:
   title: Slack UI
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/launch-channel.webp
   preview: gallery/launch-channel.mp4

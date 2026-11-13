@@ -16,7 +16,7 @@ description: >-
 metadata:
   title: Notification pop
   author: Tella
-  category: Images
+  category: UI & apps
   image: og.jpg
   poster: gallery/ios-lock-screen.webp
   preview: gallery/ios-lock-screen.mp4

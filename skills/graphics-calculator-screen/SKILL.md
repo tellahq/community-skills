@@ -18,7 +18,7 @@ description: >-
 metadata:
   title: Graphics calculator screen
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/calculator-pendulum.webp
   preview: gallery/calculator-pendulum.mp4

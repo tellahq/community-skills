@@ -16,7 +16,7 @@ description: >-
 metadata:
   title: "iMessage UI (16:9)"
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/imessage-phone-16x9.webp
   preview: gallery/imessage-phone-16x9.mp4

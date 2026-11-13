@@ -12,7 +12,7 @@ description: >-
 metadata:
   title: Logo mask reveal
   author: Grant Shaddick
-  category: Transition screens
+  category: Transitions
   image: og.jpg
   poster: gallery/logo-intro.webp
   preview: gallery/logo-intro.mp4

@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Hard hit transition
   author: Tella
-  category: Transition screens
+  category: Transitions
   image: og.jpg
   poster: gallery/hard-hit.webp
   preview: gallery/hard-hit.mp4

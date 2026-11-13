@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Full frame titles
   author: Tella
-  category: Images
+  category: Titles & text
   image: og.jpg
   poster: gallery/dream.webp
   preview: gallery/dream.mp4

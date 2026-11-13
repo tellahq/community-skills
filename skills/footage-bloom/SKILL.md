@@ -14,7 +14,7 @@ description: >-
 metadata:
   title: Bloom
   author: Tella
-  category: Editing
+  category: Editing & effects
   image: og.jpg
   poster: gallery/anamorphic-bloom.webp
   preview: gallery/anamorphic-bloom.mp4

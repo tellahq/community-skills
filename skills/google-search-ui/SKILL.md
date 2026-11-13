@@ -12,7 +12,7 @@ description: >-
 metadata:
   title: Google Search UI
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/google-search.webp
   preview: gallery/google-search.mp4

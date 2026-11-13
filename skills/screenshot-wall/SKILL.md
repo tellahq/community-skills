@@ -15,7 +15,7 @@ description: >-
 metadata:
   title: Screenshot wall
   author: Tella
-  category: Full animations
+  category: UI & apps
   image: og.jpg
   poster: gallery/recap-headline.webp
   preview: gallery/recap-headline.mp4
