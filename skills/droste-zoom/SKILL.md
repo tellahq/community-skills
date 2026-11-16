@@ -17,8 +17,8 @@ metadata:
   author: Tella
   category: Transitions
   image: og.jpg
-  poster: gallery/app-to-chapter.webp
-  preview: gallery/app-to-chapter.mp4
+  poster: gallery/through-the-screen.webp
+  preview: gallery/through-the-screen.mp4
   prompt: Add a Droste zoom from the street shot into the lake shot. Drop in an old photo print of the lake, then zoom through it until it becomes the next clip.
 ---
 
