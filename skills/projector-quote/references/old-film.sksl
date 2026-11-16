@@ -1,0 +1,53 @@
+// Old projected film for Tella Motion: the last effect on the footage, after the gate matte.
+// addEffect kind "shader" with uniforms {t: [0], cx: [1205]}, then key `t` linearly from 0 to
+// the clip's length in seconds. Tella adds its shader library (tella_hash2d, tella_hash3d,
+// tella_noise2d) to the source, so don't paste one in.
+// p is in the footage node's own pixels (its 1920 x 1080 box, before it is scaled into the
+// window). cx is the x in those pixels that sits at the window's centre:
+//   cx = 960 + (window centre x - 960 - footage x) / footage scale
+// 960 when the footage is centred in the window; 1205 for a window at 1440, x 368, scale 0.4577.
+// The hot spot, the light leak and the scratches are placed from it.
+uniform shader image;
+uniform float2 resolution;
+uniform float t;
+uniform float cx;
+half4 main(float2 p) {
+  half4 c = image.eval(p);
+  float fr = floor(t * 18.0);
+  float3 rgb = float3(c.rgb);
+  // projector hot spot: bright centre, darker corners
+  float2 q = (p - float2(cx, 540.0)) / float2(700.0, 524.0);
+  float vig = 1.0 - 0.42 * smoothstep(0.45, 1.35, length(q));
+  // exposure flicker, one value per film frame
+  float fl = 1.0 + 0.10 * (tella_hash2d(float2(fr, 3.0)) - 0.5);
+  rgb *= vig * fl;
+  // warm light leak drifting in from the left edge now and then
+  float lk = smoothstep(0.58, 0.92, tella_noise2d(float2(t * 0.55, 5.0)));
+  float lx = smoothstep(cx - 205.0, cx - 705.0, p.x + 120.0 * tella_noise2d(float2(p.y * 0.004, t * 0.8)));
+  rgb += float3(0.95, 0.42, 0.12) * lk * lx * 0.55;
+  // vertical scratches that come and go
+  float sc = 0.0;
+  for (int i = 0; i < 3; i++) {
+    float fi = float(i);
+    float slot = floor(t * 18.0 / (5.0 + fi * 4.0));
+    float on = step(0.5, tella_hash2d(float2(slot, 11.0 + fi)));
+    float x = cx - 685.0 + 1370.0 * tella_hash2d(float2(slot, 21.0 + fi)) + 5.0 * (tella_hash2d(float2(fr, 31.0 + fi)) - 0.5);
+    float w = 1.6 + 1.8 * tella_hash2d(float2(slot, 41.0 + fi));
+    float line = smoothstep(w, 0.0, abs(p.x - x));
+    float brk = smoothstep(0.3, 0.5, tella_noise2d(float2(p.y * 0.012 + fr * 0.7, fi * 7.0 + slot)));
+    sc += on * line * brk * (0.35 + 0.35 * tella_hash2d(float2(slot, 51.0 + fi)));
+  }
+  rgb = mix(rgb, float3(0.93, 0.91, 0.86), clamp(sc, 0.0, 0.8));
+  // dust and specks, new every film frame
+  float2 cell = floor(p / 110.0);
+  float h = tella_hash3d(float3(cell, fr));
+  if (h > 0.972) {
+    float2 ctr = (cell + float2(tella_hash3d(float3(cell, fr + 7.0)), tella_hash3d(float3(cell, fr + 13.0)))) * 110.0;
+    float r = 2.5 + 9.0 * tella_hash3d(float3(cell, fr + 19.0));
+    float2 d = (p - ctr) * float2(1.0, 0.6 + 0.8 * tella_hash3d(float3(cell, fr + 23.0)));
+    float blob = smoothstep(r, r * 0.35, length(d));
+    float dark = step(0.3, tella_hash3d(float3(cell, fr + 29.0)));
+    rgb = mix(rgb, mix(float3(0.95), float3(0.02), dark), blob * 0.85);
+  }
+  return half4(half3(rgb) * c.a, c.a);
+}
