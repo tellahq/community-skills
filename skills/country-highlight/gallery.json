@@ -3,7 +3,7 @@
     {
       "id": "flat-launch-japan",
       "name": "Flat launch (Japan)",
-      "description": "Flat light map. The camera flies in from the whole globe and lands on Japan, which fills in indigo. A Tokyo pin pulses, a leader line draws out, and the text 'Launching in Japan' comes in with the stat '12,400 people on the Tokyo waitlist' (fictional brand Quillmarrow Notes).",
+      "description": "Flat light map. The camera flies in from the whole globe and lands on Japan, which fills in indigo. A Tokyo pin pulses, a leader line draws out, and the headline 'Japan Launch' comes in with the stat '12,400 people on the Tokyo waitlist'.",
       "poster": "gallery/flat-launch-japan.webp",
       "preview": "gallery/flat-launch-japan.mp4"
     },
@@ -17,7 +17,7 @@
     {
       "id": "dark-multi-country-latam",
       "name": "Dark multi-country (Latin America)",
-      "description": "Flat dark map with several countries. The camera flies in from the whole globe to Latin America, then Mexico, Colombia and Brazil fill in a teal glow one after another, each with a pill showing its role count. The headline is 'Now hiring across Latin America' with a big '45 open roles' stat (fictional brand Kitebird).",
+      "description": "Flat dark map with several countries. The camera flies in from the whole globe to Latin America, then Mexico, Colombia and Brazil fill in a teal glow one after another, each with a pill showing its role count. The headline is 'Hiring across Latin America' with a big '45 open roles' stat.",
       "poster": "gallery/dark-multi-country-latam.webp",
       "preview": "gallery/dark-multi-country-latam.mp4"
     }

@@ -3,7 +3,7 @@ name: country-highlight
 description: >-
   Build a clean map moment in Tella Motion: the camera flies from the whole
   globe down to one or more countries, fills them in the brand colour, and
-  lands a label and a stat beside them ("Launching in Japan", "12,400 on the
+  lands a label and a stat beside them ("Japan Launch", "12,400 on the
   waitlist"). Two looks: flat (crisp vector, light or dark) and watercolour
   paper (pigment wash, soft edges, paper grain, handwritten labels). Country
   outlines, borders and the globe flight come from Tella's get_map_data.
@@ -31,11 +31,11 @@ Read the transcript with word timings and find where the place and the number ar
 - **Countries**: one or more (get_map_data matches them by English `name`; its `id` is the ISO numeric code, so keep alpha-3 codes such as JPN for your node ids).
 - **Brand colour**: one hex; offer the one from their logo or slides if you can see it.
 - **Look**: flat light, flat dark or watercolour paper.
-- **Headline** (2–5 words) and an optional **stat** (a number plus a short line). Never invent a number; with none, leave the stat out. If they want a stat but you can't ask, use a checkable public fact about the place ("13 provinces and territories") and say so.
+- **Headline** (2–5 words): a label, not a sentence ("Japan Launch"). Over two lines, break it by sense ("Hiring across" / "Latin America"). And an optional **stat** (a number plus a short line). Never invent a number; with none, leave the stat out. If they want a stat but you can't ask, use a checkable public fact about the place ("13 provinces and territories") and say so.
 - **City pin** (flat only, optional).
 - **Where it plays**: its own full-frame clip (default) or b-roll over the speaker, and which words it lands on.
 
-Use their brand name or none; never draw real logos.
+The text is the headline and the stat, nothing else: no eyebrow, brand line or tagline above the headline. Never draw real logos.
 
 ## The map data
 
@@ -72,9 +72,9 @@ Place every label from the static map's numbers: the target's `labelPoint` and `
 - **Light**: background `#EEF1F5`, land `#D4DAE2`, borders in the background colour, ink `#0F172A`, secondary `#475569`.
 - **Dark**: background `#0B1220`, land `#1B2434`, text `#F8FAFC` / `#94A3B8`; give brand fills a soft glow (`dropShadow`, brand at ~33 % alpha, no offset, radius 6).
 - **Fill**: key `t_<code>` colour from land to brand (easeOutCubic, 0.6 s), or `h_<code>` opacity 0→1.
-- **Type**: Inter or DM Sans (`font` takes the catalog slug: `inter`, `dm-sans`). Eyebrow 28 px 600 tracked 0.18 (no smaller: 28 px is the floor at 1080p); headline 68–84 px 700–800, box ~600 px wide; stat 88–132 px 800 in the brand colour; its line 30 px secondary. Each fades in and rises 16–22 px over 0.45–0.5 s, easeOutCubic, staggered ~0.15 s.
+- **Type**: Inter Semibold (`font: 'inter'`, `weight: 600`) with `letterSpacing: -0.01` (−1 %) for both the headline (68–84 px, line height 1–1.1, box ~600 px wide) and the stat (88–132 px, brand colour). The stat's line is 30 px, weight 400, secondary colour, no tracking. No heavier weights and no eyebrow. Each fades in and rises 16–22 px over 0.45–0.5 s, easeOutCubic, staggered ~0.15 s.
 - **Pin**: a 24 px white circle with a 12 px ink dot, a white ring pulsing scale 1→3.4 and opacity 0.9→0 (three times), and a 2 px leader to the text drawn on.
-- **Several countries**: a pill per country (54 px tall, fully rounded, dark `#0F1A2BF2` on the dark look) with a brand dot, the name (24 px 600) and its count right-aligned, staggered with the fills.
+- **Several countries**: a pill per country (54 px tall, fully rounded, dark `#0F1A2BF2` on the dark look) with a brand dot, the name (24 px 600, `letterSpacing: -0.01`) and its count right-aligned, staggered with the fills.
 
 ## Watercolour paper look
 
@@ -84,7 +84,7 @@ Place every label from the static map's numbers: the target's `labelPoint` and `
 - **Reveal**, ~1 s easeOutCubic, staggered 0.25 s: opacity 0→0.7 on `h_` and 0→0.28 on `e_`, while the turbulent amount settles 40→6 (`field:common/effects/0/effect/uniforms/amount/values/0`).
 - **Paper grain**: two full-frame white `fill` layers above the map, multiply, each with `fx.fractalNoise` (complexity 6, contrast 1.4, brightness 0.1): scale 420 at opacity 0.1 and scale 5 at opacity 0.06.
 - **Text area**: a paper-coloured rect off the text side, `blur` 90, opacity 0→0.9, quiets the map under the text.
-- **Type**: Playfair Display 700 headline (~76 px, ink `#1E2A36`); Caveat 700 for country names (40 px, paper-white `#FBF7EE` on the wash, ink when out at sea) and the stat (~84 px, brand colour) with a hand-drawn curved underline drawn on; Lora 28 px for the supporting line.
+- **Type**: Playfair Display 700 headline (`playfair-display`, ~76 px, `letterSpacing: -0.02`, ink `#1E2A36`); Caveat 700 for country names (40 px, paper-white `#FBF7EE` on the wash, ink when out at sea) and the stat (~84 px, brand colour) with a hand-drawn curved underline drawn on; Lora 28 px for the supporting line.
 - If a wash looks heavy or grey, lower its opacity before changing the colour; brand colours darken under multiply.
 
 ## Labels
@@ -97,7 +97,7 @@ Put a label inside its country only if the country is at least 1.4× the label's
 - The globe's and the flat map's coordinates are already the canvas's: add them at x, y 0 and scale 1, never inside a moved or scaled group (except the exact `position` offset above), or the hand-off jumps.
 - A `labelPoint` can land on a border in a long, thin country (Norway's sat on the Swedish border): move the label into the widest part.
 - A title's `x`/`y` is an offset from its box: key a rise as 18→0, not as an absolute position.
-- `trimPath` `end` can't be keyed. Patch `geometry.end` to 0, then key `field:geometry/end`.
+- A draw-on (leader, underline) is `addEffect` kind `trimPath` with `end: 0` on the path, then keys 0→1 on `field:common/effects/0/effect/end`.
 - `addShape` takes `shape: fill | rect | circle` (not "rectangle").
 - `duplicate` plus `node.patch` reuses a path's data for free: use it for highlights, borders and edges; never send a path twice.
 - `get_motion_preview` renders 5 s unless you pass `durationMs`; pass the full length.
