@@ -1,0 +1,13 @@
+{
+  "botName": "Launch Bot",
+  "botColor": "#54B9A6",
+  "accountName": "Armand Segall",
+  "opener": "Morning! Battery life moved to 40 hours, but the product page and press kit still say 32.",
+  "prompt": "good catch. can you update both?",
+  "reply": "Done. I updated both and pinged @Benji and @Lena.",
+  "checks": [["Product page", "updated to 40 hours"], ["Press kit", "refreshed with the new spec"]],
+  "card": {"label": "Needs your OK", "title": "Launch email · “Meet Pendel Arc”", "sub": "Battery life updated to 40 hours", "primary": "Schedule it", "secondary": "Edit first", "done": "Scheduled"},
+  "timestamp": "Friday 7:48 AM",
+  "tiles": [["Inbox Manager", "#6464EF"], ["Mktg Data", "#885CF5"]],
+  "rows": [["New Hires", "3 intros drafted in your voice", "#3C82F6"], ["Expense Manager", "Report filed. 9 receipts, not yet approved", "#ED712E"], ["Chief of Staff", "Rescheduled your flight to Thursday", "#5BC67A"]]
+}
